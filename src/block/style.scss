@@ -12,3 +12,25 @@
   max-width: 740px;
   padding: 2rem;
 }
+
+.team-card{
+  padding: 10px;
+  border: 1px solid #d4d4d4;
+  margin: 10px 0;
+  
+  .team-title{
+    margin: 0 auto !important;
+    display: block;
+    font-size: 2rem;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+}
+
+.conference-title{
+  font-size: 2.4rem;
+  border-bottom: 1px solid;
+}
+
