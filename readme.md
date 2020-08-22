@@ -2,6 +2,8 @@
 
 Display a dynamic list of NFL teams on a page on your website.  
 
+WordPress Version: 5.0 or higher  
+
 ## Features
 
 * Gutenberg block: You can include the list in whatever post or page you want just look for the block `NFL teams` in the widgets section, insert it the content and Voila!.  
