@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: resulta-nfl-teams — CGB Gutenberg Block Plugin
- * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: resulta-nfl-teams — is a Gutenberg plugin created via create-guten-block.
- * Author: mrahmadawais, maedahbatool
- * Author URI: https://AhmadAwais.com/
+ * Plugin Name: NFL Teams
+ * Plugin URI: https://github.com/CesarReyes/resulta-nfl-teams
+ * Description: Include the NFL teams list is your site
+ * Author: Cesar Reyes
+ * Author URI: https://github.com/CesarReyes
  * Version: 1.0.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt

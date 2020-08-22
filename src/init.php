@@ -97,6 +97,6 @@ add_action('init', 'resulta_nfl_teams_cgb_block_assets');
 add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style(
 		'resulta_nfl_teams-grid-css',
-		plugins_url('assets/css/grid.css', dirname(__FILE__)), // Block style CSS.
+		plugins_url('assets/css/grid.css', dirname(__FILE__)) // Block style CSS.
 	);
 });
