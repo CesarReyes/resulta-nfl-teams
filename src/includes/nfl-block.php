@@ -2,12 +2,15 @@
 
 define('RESULTA_NFL_TEAMS_CACHE_KEY', 'resulta-nfl-teams');
 define('RESULTA_NFL_TEAMS_ENDPOINT_OPTION', 'resulta-nfl-endpoint');
+define('RESULTA_NFL_TEAMS_APIKEY_OPTION', 'resulta-nfl-api-key');
+define('RESULTA_NFL_TEAMS_CACHE_EXPIRE_OPTION', 'resulta-nfl-cache-expire');
 
 add_action(
     'init',
     function () {
         // Options
-        add_option(RESULTA_NFL_TEAMS_ENDPOINT_OPTION, 'http://delivery.chalk247.com/team_list/NFL.JSON?api_key=74db8efa2a6db279393b433d97c2bc843f8e32b0');
+        add_option(RESULTA_NFL_TEAMS_ENDPOINT_OPTION, 'http://delivery.chalk247.com/team_list/NFL.JSON');
+        add_option(RESULTA_NFL_TEAMS_APIKEY_OPTION, '74db8efa2a6db279393b433d97c2bc843f8e32b0');
 
         register_block_type(
             'resulta/block-resulta-nfl-teams',
@@ -109,6 +112,11 @@ function resulta_get_nfl_teams()
     // No/Expired cache: Call the endpoint and update the cache
     if (!$teams) {
         $endpoint = get_option(RESULTA_NFL_TEAMS_ENDPOINT_OPTION);
+        $api_key = get_option(RESULTA_NFL_TEAMS_APIKEY_OPTION);
+        $cache_expire = get_option(RESULTA_NFL_TEAMS_CACHE_EXPIRE_OPTION, 15);
+
+        $endpoint = "$endpoint?api_key=$api_key";
+
         $response = wp_remote_get($endpoint);
         if (is_wp_error($response)) {
             return null;
@@ -125,7 +133,7 @@ function resulta_get_nfl_teams()
         }
 
         // Expires in 15 minutes
-        set_transient(RESULTA_NFL_TEAMS_CACHE_KEY, $teams, 15 * MINUTE_IN_SECONDS);
+        set_transient(RESULTA_NFL_TEAMS_CACHE_KEY, $teams, $cache_expire * MINUTE_IN_SECONDS);
     }
 
     return $teams;
