@@ -11,6 +11,7 @@ add_action(
         // Options
         add_option(RESULTA_NFL_TEAMS_ENDPOINT_OPTION, 'http://delivery.chalk247.com/team_list/NFL.JSON');
         add_option(RESULTA_NFL_TEAMS_APIKEY_OPTION, '74db8efa2a6db279393b433d97c2bc843f8e32b0');
+        add_option(RESULTA_NFL_TEAMS_CACHE_EXPIRE_OPTION, 15);
 
         register_block_type(
             'resulta/block-resulta-nfl-teams',

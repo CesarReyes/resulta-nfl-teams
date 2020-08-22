@@ -4,17 +4,25 @@ Display a dynamic list of NFL teams on a page on your website.
 
 ## Features
 
-* Gutenberg block: you can include the list in whatever post or page you want just look for the block `NFL teams` in the widgets section.
+* Gutenberg block: You can include the list in whatever post or page you want just look for the block `NFL teams` in the widgets section, insert it the content and Voila!.  
 
-* Shortcode for those who don't have Gutenberg available in your WordPress just insert the shorcode `[nfl-teams]`.
+* Shortcode: For those who don't have Gutenberg available in your WordPress just insert the shortcode `[nfl-teams]`.  
 
 ## How the data is ingested and maintained
 
-The dynamic list is loaded from an external source;  The performance and data availability is important and that is why we store the data into WordPress transient cache and we reload every 15 minutes.  
+The dynamic list is loaded from an external source;  The performance and data availability is important and that is why we store the data into WordPress transient cache and we reload every 15* minutes.  
+
+###### *You can control the cache time using the plugin options. See below
+
+## Presentation and SEO
+
+The list presented is grouped by conference following the same style from the official NFL website <https://www.nfl.com/teams/> and there is no necessary other sorting or grouping because of the small the size of the data and for the users is easy to find what the are looking for.  
+
+In terms of SEO we use an "eaasy to read" HTML content structure for the Search engine crawlers.  
 
 ## Configurations
 
-All the plugins configurations are stored in the Wordpress options and usually are accesibles via eternal options manager plugin or you just can go to: `https://[host]/wp-admin/options.php`.  
+All the plugin configurations are stored in the Wordpress options and usually are accesibles via an external options manager plugin or you just can go to: `https://[host]/wp-admin/options.php`.  
 
 Note: The plugin is preloaded with default API key  
 
